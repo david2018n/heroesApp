@@ -4,8 +4,9 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BuscarComponent } from './pages/buscar/buscar.component';
 
-const routes:Routes=[
+const routes:Routes = [
   {
     path:'',
     component:HomeComponent,
@@ -23,6 +24,10 @@ const routes:Routes=[
         component: AgregarComponent
       },
       {
+        path: 'buscar',
+        component: BuscarComponent
+      },
+      {
         path: ':id',
         component: HeroeComponent
       },
@@ -30,7 +35,6 @@ const routes:Routes=[
         path: '**',
         redirectTo: 'listado'
       }
-      
     ]
   }
 ]

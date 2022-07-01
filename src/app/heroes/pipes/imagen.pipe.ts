@@ -8,6 +8,12 @@ export class ImagenPipe implements PipeTransform {
   ruta: string = 'assets/heroes/';
   extension: string = '.jpg'
   transform(heroe: Heroe,): string {
-    return `${this.ruta}${heroe.id}${this.extension}`;
+    if( !heroe.id && !heroe.alt_img){
+      return 'assets/no-image.png'
+    } else if (heroe.alt_img){
+      return heroe.alt_img;
+    } else {
+      return `${this.ruta}${heroe.id}${this.extension}`;
+    }
   }
 }
